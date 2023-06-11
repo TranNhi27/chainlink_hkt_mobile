@@ -23,10 +23,6 @@ List<String> textHolder = [
   "Please gracefully enjoy today's journey"
 ];
 late Timer timer;
-var rpcUrl =
-    "https://polygon-mumbai.g.alchemy.com/v2/Er2Jyu5dpyBHmhGAcJxIZOie9QUDki0P";
-var wsUrl =
-    "wss://polygon-mumbai.g.alchemy.com/v2/Er2Jyu5dpyBHmhGAcJxIZOie9QUDki0P";
 
 Future<bool> checkContractStatus() async {
   await dotenv.load(fileName: "assets/.env");
