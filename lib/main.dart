@@ -1,4 +1,5 @@
 import 'package:chainlink_project/route.dart';
+import 'package:chainlink_project/screens/logo/logo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chainlink_project/screens/app_state/appstatus_screen.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       routes: routes,
-      initialRoute: AppStatus.routeName,
+      initialRoute: LogoScreen.routeName,
     );
   }
 }

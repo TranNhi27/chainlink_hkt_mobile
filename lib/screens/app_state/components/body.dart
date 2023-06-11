@@ -51,7 +51,7 @@ Future<int> fetchGoogleEarning() async {
 
   earning = await http
       .get(Uri.parse(
-          'https://testapi.io/api/Hayden/v1/accounts/pub-9988776655443322/networkReport'))
+          'https://testapi.io/api/Hayden27/v1/accounts/pub-9988776655443322/networkReport'))
       .then((response) {
     Map<String, dynamic> data = jsonDecode(response.body);
     logger.d(data["row"]["metricValues"]["ESTIMATED_EARNINGS"]["microsValue"]);

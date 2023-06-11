@@ -41,10 +41,12 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-        child: Column(
-          children: [
-          Container(
+    return Center(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        SizedBox(
+          height: 30,
+        ),
+        Container(
           width: 350,
           padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
           decoration: BoxDecoration(
@@ -57,28 +59,38 @@ class _BodyState extends State<Body> {
             ],
           ),
           child: const Text(
-            "User could claim game reward by pressing this button. In exchange, the app could achieve Admod earning used for donation to charities",
-            style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            "User could claim game reward by pressing this button. In exchange, the app could achieve Admod earning used for donation to charity organizations",
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          ),SizedBox(height: 32,),
-            InkWell(
-              onTap: _showRewardedAd,
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.blue[400],
-                  border: Border.all(width: 3.0, color: Colors.blueAccent),
-                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                  boxShadow: const [BoxShadow(blurRadius: 10,color: Colors.black,offset: Offset(1,3))],
-                ),
-                child: const Text(
-                  "Show ad",
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35),
-                ),
-              ),
+        ),
+        SizedBox(
+          height: 32,
+        ),
+        InkWell(
+          onTap: _showRewardedAd,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.blue[400],
+              border: Border.all(width: 3.0, color: Colors.blueAccent),
+              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              boxShadow: const [
+                BoxShadow(
+                    blurRadius: 10, color: Colors.black, offset: Offset(1, 3))
+              ],
             ),
-        ])
+            child: const Text(
+              "Show ad",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35),
+            ),
+          ),
+        ),
+      ]),
     );
   }
 
@@ -107,12 +119,11 @@ class _BodyState extends State<Body> {
   }
 
   //show ad method
-  void _showRewardedAd(){
+  void _showRewardedAd() {
     rewardedAd.show(
-        onUserEarnedReward: (AdWithoutView ad, RewardItem rewardItem){
-          num amount = rewardItem.amount;
-          print("You earned: $amount");
-        }
-    );
+        onUserEarnedReward: (AdWithoutView ad, RewardItem rewardItem) {
+      num amount = rewardItem.amount;
+      print("You earned: $amount");
+    });
   }
 }
